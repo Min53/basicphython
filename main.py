@@ -1,5 +1,4 @@
 '''
-
 def add_item(item, amount, t_inventory):
     if check_item(item, t_inventory):
         t_inventory[item] += amount
@@ -14,6 +13,8 @@ def remove_item(item, t_inventory):
         print(item+"의 수량이 0이 되었습니다.")
     else:
         print(item+"이 존재하지 안습니다.")
+
+        '''
 #새로운 함수, 포션 사용
 #존재하지 아이템을 수량 1 빼기
 def consume_item(item):
@@ -57,10 +58,20 @@ def use_item():
 
 use_item()
 
-'''
+
 
 # todolist 3
 # 캐릭터 만들기
+
+import os
+
+if os.path.isfile("gmame_save.p"):
+    load_file = open("game_save.p", "rb"))
+    character = pickle.load(load_file)
+    load_file.colse()
+    print("저장된 파일을 읽어왔습니다.")
+else:
+    print("읽어올 파일이 없습니다.")
 character ={}
 select_character = None
 def new_character(name,t_character):
